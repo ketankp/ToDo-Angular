@@ -1,0 +1,14 @@
+<div class="card container my-3 px-0">
+    <div class="card-header">
+        {{todo.title}}
+    </div>
+    <div class="card-body" [ngClass]="{'bgColor': !todo.active}">
+        <p class="card-text">{{todo.description}}</p>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="switch{{i}}" (click)="onToggleClick(todo)"
+             [checked]=!todo.active>
+            <label class="form-check-label" for="switch{{i}}" >Mark as Done</label>
+            <button class="btn btn-sm btn-danger ms-5" (click)="onDeleteClick(todo)">Delete</button>
+        </div>
+    </div>
+</div>

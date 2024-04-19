@@ -1,1 +1,31 @@
-<p>todo-add works!</p>
+<div class="container mt-5">
+    <form (ngSubmit)="addTodo()">
+        <div class="mb-2 row">
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="title" name="tile" id="title" placeholder="Enter Title">
+            </div>
+        </div>
+        <div class="mb-2 row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="description" name="description" id="description" placeholder="Enter Description">
+            </div>
+        </div>
+        <div class="mb-2">
+            <button class="btn btn-sm btn-primary" type="submit">Add Todo</button>
+        </div>
+    </form>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" [ngClass]="{'liveToastShow': show, 'liveToastHide' : !show }" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" (click)="close()"></button>
+        </div>
+        <div class="toast-body">
+            Todo has been successfully added!!
+        </div>
+    </div>
+</div>
