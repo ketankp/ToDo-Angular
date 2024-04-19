@@ -1,1 +1,6 @@
-<p>todo works!</p>
+<div class="container">
+    <h5>Your Todo's</h5>
+    <div *ngFor="let todo of todo;index as i">
+        <app-todo-item [todo]="todo" [i] = "i" (deleteTodo) = "deleteTodo($event)" (toggleTodo)="toggleTodo($event)"></app-todo-item>
+    </div>
+</div>
